@@ -1,0 +1,8 @@
+// Variables
+$dark-gray: #333;
+$body-text-color: $dark-gray;
+
+// Links
+$link-color: transparentize($body-text-color, 0.3);
+$hover-link-color: transparentize($body-text-color, 0.5);
+$active-link-color: transparentize($body-text-color, 0.1);

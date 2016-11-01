@@ -1,0 +1,23 @@
+.icon-so {
+  display: inline-block;
+  .icon-img {
+    height: 16px;
+    width: 16px;
+    background-size: cover;
+    background-image: url('/images/icon-so.png');
+  }
+}
+
+.site-footer {
+  position: fixed;
+  bottom: 1em;
+  width: 100%;
+  border-top: solid 1px #333;
+  padding: 1em 1em 0;
+  section {
+    &.footer-col {
+      padding: 0 1em;
+      @include span-columns(3);
+    }
+  }
+}

@@ -1,46 +1,27 @@
 <footer class="site-footer">
 
-  <div class="wrapper">
+  <section class="footer-col">
+    <span>{{ site.author | escape }}</span>
+  </section>
 
-    <h2 class="footer-heading">{{ site.title | escape }}</h2>
+  <section class="footer-col text-centered">
+    <span><a href="mailto:{{ site.email }}">{{ site.email }}</a></span>
+  </section>
 
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li>
-            {% if site.author %}
-              {{ site.author | escape }}
-            {% else %}
-              {{ site.title | escape }}
-            {% endif %}
-            </li>
-            {% if site.email %}
-            <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-            {% endif %}
-        </ul>
-      </div>
+  <section class="footer-col text-centered">
+    {% if site.github_username %}
+    <span>
+      {% include icon-github.html username=site.github_username %}
+    </span>
+    {% endif %}
+  </section>
 
-      <div class="footer-col footer-col-2">
-        <ul class="social-media-list">
-          {% if site.github_username %}
-          <li>
-            {% include icon-github.html username=site.github_username %}
-          </li>
-          {% endif %}
-
-          {% if site.so_username %}
-          <li>
-            {% include icon-so.html username=site.so_username %}
-          </li>
-          {% endif %}
-        </ul>
-      </div>
-
-      <div class="footer-col footer-col-3">
-        <p>{{ site.description | escape }}</p>
-      </div>
-    </div>
-
-  </div>
+  <section class="footer-col text-right">
+    {% if site.so_username %}
+    <span>
+      {% include icon-so.html username=site.so_username %}
+    </span>
+    {% endif %}
+  </section>
 
 </footer>

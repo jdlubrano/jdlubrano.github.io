@@ -1,0 +1,17 @@
+.text-centered, .text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+a {
+  color: $link-color;
+  &:hover, &:focus {
+    color: $hover-link-color;
+  }
+  &:active, &:visited {
+    color: $active-link-color;
+  }
+}
