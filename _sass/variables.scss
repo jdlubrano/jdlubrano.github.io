@@ -1,8 +1,18 @@
-// Variables
+// Colors
+$white: #fff;
 $dark-gray: #333;
-$body-text-color: $dark-gray;
+$transparent-white: transparentize($white, 0.3);
+
+// Variables
+$primary-color: #283048;
+$secondary-color: #859398;
+
+$primary-text-color: $white;
 
 // Links
-$link-color: transparentize($body-text-color, 0.3);
-$hover-link-color: transparentize($body-text-color, 0.5);
-$active-link-color: transparentize($body-text-color, 0.1);
+$link-color: transparentize($primary-text-color, 0.3);
+$hover-link-color: transparentize($primary-text-color, 0.5);
+$active-link-color: transparentize($primary-text-color, 0.1);
+
+// Screen sizes
+$large-screen: 53.75em !default;

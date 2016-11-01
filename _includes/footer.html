@@ -4,11 +4,11 @@
     <span>{{ site.author | escape }}</span>
   </section>
 
-  <section class="footer-col text-centered">
+  <section class="footer-col">
     <span><a href="mailto:{{ site.email }}">{{ site.email }}</a></span>
   </section>
 
-  <section class="footer-col text-centered">
+  <section class="footer-col">
     {% if site.github_username %}
     <span>
       {% include icon-github.html username=site.github_username %}
@@ -16,7 +16,7 @@
     {% endif %}
   </section>
 
-  <section class="footer-col text-right">
+  <section class="footer-col">
     {% if site.so_username %}
     <span>
       {% include icon-so.html username=site.so_username %}

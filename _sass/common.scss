@@ -1,3 +1,10 @@
+body {
+  margin: 0;
+  color: $primary-text-color;
+  background: $primary-color; /* fallback for old browsers */
+  background: linear-gradient(to left, $primary-color, $secondary-color);
+}
+
 .text-centered, .text-center {
   text-align: center;
 }
