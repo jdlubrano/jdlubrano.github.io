@@ -2,22 +2,40 @@
 layout: default
 ---
 
-<div class="home">
+<section class="billboard text-center">
+  <h1 class="author-name">Joel Lubrano</h1>
+  <p>Sharing my mistakes in hopes that you may avoid your own</p>
+</section>
 
-  <h1 class="page-heading">Posts</h1>
+<section class="blog-preview text-center">
+  <h1 class="page-heading">The Code Less Traveled</h1>
 
+  <h2>Recent Posts</h2>
   <ul class="post-list">
-    {% for post in site.posts %}
+    {% for post in site.posts limit: 3 %}
       <li>
         <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
         <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+            {{ post.title | escape }}
+          </a>
         </h2>
       </li>
     {% endfor %}
   </ul>
+</section>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+<section class="projects-preview text-center">
+  <h1 class="page-heading">Featured Projects</h1>
 
-</div>
+  <ul class="projects-list">
+    {% for project in site.data.projects limit: 3 %}
+    <li>
+      <h2>{{ project.name | escape }}</h2>
+      <p>{{ project.description }}</p>
+      <p>Source available on {{ project.source_link }}</p>
+    </li>
+    {% endfor %}
+  </ul>
+</section>

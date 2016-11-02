@@ -1,0 +1,16 @@
+.billboard {
+  margin-bottom: 2em;
+  @include span-columns(12);
+  @include omega();
+  .author-name {
+    font-size: 4em;
+    margin-bottom: 0.25em;
+  }
+}
+
+.blog-preview {
+  @include span-columns(12);
+  @include media($large-screen) {
+    @include span-columns(6);
+  }
+}

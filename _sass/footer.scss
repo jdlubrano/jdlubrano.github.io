@@ -9,10 +9,11 @@
 }
 
 .site-footer {
-  position: fixed;
+  position: absolute;
   bottom: 1em;
   width: 100%;
-  border-top: solid 1px $transparent-white;
+  height: $footer-height;
+  border-top: solid 1px $accent-color;
   padding: 1em 1em 0;
   section {
     &.footer-col {

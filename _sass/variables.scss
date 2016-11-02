@@ -3,16 +3,22 @@ $white: #fff;
 $dark-gray: #333;
 $transparent-white: transparentize($white, 0.3);
 
-// Variables
+// Color Scheme
 $primary-color: #283048;
 $secondary-color: #859398;
+$tertiary-color: #d3d3d3;
 
-$primary-text-color: $white;
+// Text
+$primary-text-color: $tertiary-color;
+$accent-color: lighten($primary-text-color, 15%);
+$accent-text-color: lighten($primary-text-color, 15%);
 
-// Links
-$link-color: transparentize($primary-text-color, 0.3);
-$hover-link-color: transparentize($primary-text-color, 0.5);
-$active-link-color: transparentize($primary-text-color, 0.1);
+// Link colors
+$link-color: $accent-text-color;
+$hover-link-color: transparentize($link-color, 0.2);
+$active-link-color: transparentize($link-color, 0.4);
 
 // Screen sizes
 $large-screen: 53.75em !default;
+
+$footer-height: 40px;

@@ -1,8 +1,40 @@
-body {
+html, body {
   margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+#wrapper {
+  min-height: 100%;
+  position: relative;
+}
+
+#header {
+}
+
+#content {
+  @include outer-container();
+  padding-bottom: calc(#{$footer-height} + 2em);
+}
+
+#footer {
+  position: absolute;
+  height: $footer-height;
+  bottom: 0;
+  width: 100%;
+}
+
+body {
   color: $primary-text-color;
   background: $primary-color; /* fallback for old browsers */
   background: linear-gradient(to left, $primary-color, $secondary-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $accent-text-color;
+  &.page-heading {
+    font-size: 1.5em;
+  }
 }
 
 .text-centered, .text-center {
