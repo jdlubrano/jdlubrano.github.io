@@ -14,7 +14,7 @@ html, body {
 
 #content {
   @include outer-container();
-  padding-bottom: calc(#{$footer-height} + 2em);
+  padding: 0 1em calc(#{$footer-height} + 2em);
 }
 
 #footer {
@@ -45,6 +45,10 @@ h1, h2, h3, h4, h5, h6 {
   text-align: right;
 }
 
+.text-justified {
+  text-align: justify;
+}
+
 a {
   color: $link-color;
   &:hover, &:focus {
@@ -53,4 +57,8 @@ a {
   &:active, &:visited {
     color: $active-link-color;
   }
+}
+
+.container {
+  @include span-columns(12);
 }

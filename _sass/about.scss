@@ -1,0 +1,18 @@
+.about-container {
+  @include span-columns(12);
+  @include media($tablet) {
+    @include span-columns(8);
+  }
+}
+
+.headshot-container {
+  @include span-columns(12);
+  @include media($tablet) {
+    @include span-columns(4);
+  }
+  img {
+    opacity: 0;
+    transition: opacity 2s;
+    border-radius: 1em;
+  }
+}
