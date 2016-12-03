@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster|Ubuntu+Mono');
+
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
+  font-family: 'Ubuntu Mono', monospace;
 }
 
 #wrapper {
@@ -31,6 +34,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lobster', cursive;
   color: $accent-text-color;
   &.page-heading {
     font-size: 1.5em;
