@@ -37,3 +37,6 @@ defaults:
 
 gems:
   - jekyll-autoprefixer
+
+disqus:
+  shortname: jdlubrano
