@@ -69,7 +69,7 @@ torn to shreds.
 
 I have some suggestions to help achieve a productive teaching session; you can
 find those in my
-[Teach Testing Through Pairing]({% post_url 2016-12-03-teach-testing-through-pairing %})
+[Teach Testing Through Pairing]({% post_url 2016-12-04-teach-testing-through-pairing %})
 post.
 
 Finally, as a piece of advice and encouragement to junior developers, your
