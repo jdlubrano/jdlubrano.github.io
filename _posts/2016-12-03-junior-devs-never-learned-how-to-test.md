@@ -28,7 +28,7 @@ overwhelmed by the firehose of information regarding your codebase, your
 technology stack, your system architecture, your developer workflow, the
 team's culture, and the company's culture.
 
-![Drinking from a firehose]({{"/images/drinking-from-a-firehose.jpg" | relative_url}})
+![Drinking from a firehose]({{"/images/drinking-from-a-firehose.jpg" | relative_url}}){: .centered }
 
 So, as the junior dev takes on their first user story, kanban card,
 or whatever, they just want to beat back their inevitable imposter syndrome and
