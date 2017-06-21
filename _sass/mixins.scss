@@ -1,0 +1,19 @@
+@mixin text-center() {
+  text-align: center;
+}
+
+@mixin secondary-text() {
+  color: $secondary-text-color;
+}
+
+@mixin secondary-link() {
+  @include secondary-text();
+
+  &:hover, &:focus {
+    color: transparentize($secondary-text-color, 0.2);
+  }
+
+  &:active, &:visited {
+    color: transparentize($secondary-text-color, 0.4);
+  }
+}

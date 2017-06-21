@@ -6,5 +6,21 @@ permalink: /blog
 
 <div class="billboard text-center">
   <h1 class="headline">The Code Less Traveled</h1>
-  <p>Coming soon!</p>
+</div>
+<div class="post-cards-container">
+  {% for post in site.posts %}
+  <div class="post-card" onclick="window.location = '{{ post.url }}'">
+      <div class="card-header">
+        <p>
+          {{ post.title }}
+        </p>
+        <p>
+          {{ post.date | date: "%b %-d, %Y" }}
+        </p>
+      </div>
+      <div class="card-body">
+        <p>{{ post.excerpt }}</p>
+      </div>
+    </div>
+  {% endfor %}
 </div>

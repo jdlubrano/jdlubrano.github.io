@@ -1,0 +1,41 @@
+.post-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  clear: both;
+}
+
+.post-card {
+  @include text-center();
+
+  @include media($tablet) {
+    width: 31%;
+  }
+
+  width: 100%;
+  margin: 1em;
+  box-shadow: 0 2px 4px darken($accent-color, 10%);
+  border: 1px solid $secondary-color;
+  border-radius: 2px;
+  cursor: pointer;
+
+  &:hover {
+    .card-header {
+      background-color: lighten($card-header-background-color, 10%);
+    }
+  }
+
+  .card-header {
+
+    @include secondary-text();
+
+    background-color: $card-header-background-color;
+    font-size: 1.25em;
+    font-weight: bold;
+    padding: 1em;
+    border-bottom: 2px solid $secondary-color;
+  }
+
+  .card-body {
+    padding: 1em;
+  }
+}
