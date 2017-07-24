@@ -45,12 +45,14 @@ header.navigation {
   // Mobile view
 
   .navigation-menu-button {
-    color: $navigation-color;
+    color: $accent-text-color;
     display: block;
     float: right;
-    line-height: $navigation-height;
     margin: 0;
+    padding-top: 0.8em;
     padding-right: 1em;
+
+    font-size: 1.25em;
     text-decoration: none;
     text-transform: uppercase;
 
@@ -134,5 +136,13 @@ header.navigation {
   .active-nav-item a {
     border-bottom: 1px solid $navigation-active-link-color;
     padding-bottom: 3px;
+  }
+
+  .terminal-icon {
+    @include media($horizontal-bar-mode) {
+      display: inline;
+    }
+
+    display: none;
   }
 }
