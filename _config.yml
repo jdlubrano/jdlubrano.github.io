@@ -35,7 +35,7 @@ defaults:
     values:
       author: Joel Lubrano
 
-gems:
+plugins:
   - jekyll-autoprefixer
 
 disqus:
