@@ -1,4 +1,7 @@
--
-  name: Datamaps Icons
+- name: Deliver Later Matchers
+  description: RSpec matchers for ActionMailer delayed emails
+  source_link: <a href="https://github.com/jdlubrano/deliver_later_matchers">GitHub</a>
+
+- name: Datamaps Icons
   description: A plugin for the <a href="https://datamaps.github.io">Datamaps</a> library
   source_link: <a href="https://github.com/jdlubrano/datamaps-icons-plugin">GitHub</a>
