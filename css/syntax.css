@@ -168,7 +168,7 @@ div.highlight { border-radius: 0.25em; }
 
   padding: 0.5em;
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 1em;
 }
 .highlight .n, .highlight .py, .highlight .nx {
   color: #ffffff;
