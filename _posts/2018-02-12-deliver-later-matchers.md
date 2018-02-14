@@ -2,6 +2,7 @@
 layout: post
 title: "Verifying Background Emails in Rails"
 date: 2018-02-12 16:03:00 -0400
+excerpt: I made gem to more easily test whether `ActionMailer` emails will be delivered later.
 categories: testing gems
 ---
 
