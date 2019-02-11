@@ -20,14 +20,15 @@ So, feel free to cherish my mistakes, especially if it means avoiding your own.
   My name is Joel Lubrano and I am a software developer, but I never said that
   I was any good.
 
-  I currently work with [MakeTime](https://maketime.io) in
-  Lexington, Kentucky as we attempt to revolutionize American manufacturing.
-  My work at MakeTime deals primarily with Ruby on Rails, AngularJS, and a
-  sprinkle of Python here and there.  I wrote one project in Elixir just to
-  give that a whirl (Elixir is a lot of fun if you ever have the chance to
-  work with it).
+  I currently work with [Stitch Fix](https://stitchfix.com).  My work at
+  Stitch Fix deals primarily with Ruby on Rails, RabbitMQ, and third-party
+  integrations.  The Stitch Fix ecosystem is extremely distributed; it feels
+  like someone is creating a new microservice every week.
 
-  Before I joined MakeTime, I was a software engineer with Lexmark International.
+  Before I joined Stitch Fix, I worked for a startup called, MakeTime; MakeTime
+  was a Ruby on Rails shop with a sprinkle of Python here and there.  MakeTime
+  has since been purchased by [Xometry](https://www.xometry.com/).  Prior to my
+  years at MakeTime, I was a software engineer with Lexmark International.
   Most of my work at Lexmark was with Java, PHP, and MeteorJS.
 
 {: .mt-1-5em }
