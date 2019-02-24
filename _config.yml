@@ -40,3 +40,6 @@ plugins:
 
 disqus:
   shortname: the-code-less-traveled
+
+google_analytics:
+  tracking_id: "UA-135102435-1"
