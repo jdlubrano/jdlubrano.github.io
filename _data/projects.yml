@@ -1,3 +1,7 @@
+- name: StreamLines
+  description: A Ruby gem for reading remote files one line at a time
+  source_link: <a href="https://github.com/jdlubrano/stream_lines">GitHub</a>
+
 - name: Deliver Later Matchers
   description: RSpec matchers for ActionMailer delayed emails
   source_link: <a href="https://github.com/jdlubrano/deliver_later_matchers">GitHub</a>
