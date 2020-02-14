@@ -43,8 +43,6 @@ download the large events file from our ESP, we iterate through the file and
 for every 100,000 rows in the CSV, we create a separate CSV file in an AWS S3
 bucket.  Each background job saves the events in one of these smaller S3 files.
 
-![Email events system diagram]({{"/images/email-events-diagram.png" | relative_url}}){: .centered }
-
 ## The Algorithm
 
 ### The Procedural Approach
