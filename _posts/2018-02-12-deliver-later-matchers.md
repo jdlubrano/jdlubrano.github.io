@@ -30,7 +30,9 @@ send out emails to all of an `EmailCampaign`'s recipients after the
 ```ruby
 class EmailCampaignsController < ApplicationController
   def create
-    @email_campaign = EmailCampaign.new(email_campaign_params)
+    @email_campaign = EmailCampaign
+                      .new(email_campaign_params)
+
     @email_campaign.recipients = recipient_params
 
     if @email_campaign.save
@@ -45,7 +47,9 @@ class EmailCampaignsController < ApplicationController
 
   def send_email_campaign
     @email_campaign.recipients.each do |recipient|
-      EmailCampaignMailer.campaign_email(recipient).deliver_later
+      EmailCampaignMailer
+      .campaign_email(recipient)
+      .deliver_later
     end
   end
 end
@@ -70,7 +74,10 @@ So a request spec for my create endpoint would look something like:
 
 ```ruby
 it 'delivers a campaign email later to each recipient' do
-  recipients = [{ email: 'test1@test.com' }, { email: 'test2@test.com' }]
+  recipients = [
+    { email: 'test1@test.com' },
+    { email: 'test2@test.com' }
+  ]
 
   params = {
     body: 'This is my email body',
@@ -79,15 +86,22 @@ it 'delivers a campaign email later to each recipient' do
   }
 
   mail_double = double(deliver_later: nil)
-  allow(EmailCampaignMailer).to receive(:campaign_email).and_return(mail_double)
+
+  allow(EmailCampaignMailer)
+    .to receive(:campaign_email)
+    .and_return(mail_double)
 
   post '/email_campaigns', params: params
 
   recipients.each do |recipient|
-    expect(EmailCampaignMailer).to have_received(:campaign_email).with(recipient)
+    expect(EmailCampaignMailer)
+      .to have_received(:campaign_email)
+      .with(recipient)
   end
 
-  expect(mail_double).to have_received(:deliver_later).twice
+  expect(mail_double)
+    .to have_received(:deliver_later)
+    .twice
 end
 ```
 
@@ -116,7 +130,10 @@ What @fabn and I ultimately wanted was something like:
 
 ```ruby
 it 'delivers a campaign email later to each recipient' do
-  recipients = [{ email: 'test1@test.com' }, { email: 'test2@test.com' }]
+  recipients = [
+    { email: 'test1@test.com' },
+    { email: 'test2@test.com' }
+  ]
 
   params = {
     body: 'This is my email body',
@@ -126,8 +143,10 @@ it 'delivers a campaign email later to each recipient' do
 
   expect {
     post '/email_campaigns', params: params
-  }.to enqueue_email(EmailCampaignMailer, :campaign_email).with(recipients.first)
-    .and enqueue_email(EmailCampaignMailer, :campaign_email).with(recipients.last)
+  }.to enqueue_email(EmailCampaignMailer, :campaign_email)
+   .with(recipients.first)
+   .and enqueue_email(EmailCampaignMailer, :campaign_email)
+   .with(recipients.last)
 end
 ```
 
@@ -141,7 +160,9 @@ Alright, so, a crash course on ActionMailer and delayed emails.  When you call
 `deliver_later` on an `ActionMailer` email method
 
 ```ruby
-EmailCampaignMailer.campaign_email(recipient).deliver_later
+EmailCampaignMailer
+  .campaign_email(recipient)
+  .deliver_later
 ```
 
 what happens?  Well, `ActionMailer` enqueues an `ActiveJob` to deliver the
@@ -170,9 +191,12 @@ that an `ActionMailer::DeliveryJob` with a given set of arguments is enqueued.
 Recall that the desired syntax for `deliver_later_matchers` was:
 
 ```ruby
-expect { EmailCampaignMailer.campaign_email(recipient).deliver_later }
-  .to enqueue_email(EmailCampaign, :campaign_email)
-  .with(recipient)
+expect {
+  EmailCampaignMailer
+    .campaign_email(recipient)
+    .deliver_later
+}.to enqueue_email(EmailCampaign, :campaign_email)
+ .with(recipient)
 ```
 
 So the matcher needs to run the given block and verify that the block adds a
@@ -181,14 +205,14 @@ need to know which jobs are added by the block and then search through those
 jobs to find one that matches our expected arguments.
 
 It turns out that achieving this is not all that difficult.  In
-`lib/deliver_later_matchers/deliver_later.rb`, we have the `matches?`
-method (shortened for brevity here):
+`deliver_later.rb`, we have the `matches?` method (shortened for brevity here):
 
 ```ruby
 def matches?(block)
   existing_jobs_count = enqueued_jobs.size
   block.call
-  jobs_from_block = enqueued_jobs[existing_jobs_count..-1]
+  job_range = existing_jobs_count..-1
+  jobs_from_block = enqueued_jobs[job_range]
 
   matching_job_exists?(jobs_from_block)
 end

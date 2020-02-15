@@ -43,8 +43,6 @@ download the large events file from our ESP, we iterate through the file and
 for every 100,000 rows in the CSV, we create a separate CSV file in an AWS S3
 bucket.  Each background job saves the events in one of these smaller S3 files.
 
-![Email events system diagram]({{"/images/email-events-diagram.png" | relative_url}}){: .centered }
-
 ## The Algorithm
 
 ### The Procedural Approach
@@ -174,7 +172,9 @@ class FileSplitter
   def split_large_csv_file(file_path)
     events_csv = EventsCSV.new(file_path)
 
-    events_csv.each_slice(BATCH_LIMIT).each_with_index.map do |batch, file_index|
+    events_csv.each_slice(BATCH_LIMIT)
+              .each_with_index
+              .map do |batch, file_index|
       split_file_path = "#{file_path}_#{file_index}"
 
       File.open(split_file_path, 'w') do |csv|
@@ -197,7 +197,9 @@ class FileSplitter
   def split_large_csv_file(file_path)
     events_csv = EventsCSV.new(file_path)
 
-    events_csv.each_slice(BATCH_LIMIT).each_with_index.map do |batch, i|
+    events_csv.each_slice(BATCH_LIMIT)
+              .each_with_index
+              .map do |batch, i|
       "#{file_path}_#{i}".tap do |split_file_path|
         write_batch_to_file(split_file_path, events_csv.headers, batch)
       end

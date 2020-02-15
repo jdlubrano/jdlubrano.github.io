@@ -56,7 +56,10 @@ class FileSplitter
   def split_large_csv_file(file_path)
     events_csv = EventsCSV.new(file_path)
 
-    events_csv.each_slice(BATCH_LIMIT).each_with_index.map do |batch, i|
+    events_csv
+      .each_slice(BATCH_LIMIT)
+      .each_with_index
+      .map do |batch, i|
       "#{file_path}_#{i}".tap do |split_file_path|
         write_batch_to_file(split_file_path, events_csv.headers, batch)
       end
@@ -100,7 +103,8 @@ require_relative 'file_splitter'
 start = Time.now
 file_path = 'big_csv.csv'
 file_splitter = FileSplitter.new
-split_files = file_splitter.split_large_csv_file(file_path)
+split_files = file_splitter
+              .split_large_csv_file(file_path)
 
 puts "Finished in #{(Time.now - start).round(3)} seconds"
 ```
@@ -121,7 +125,10 @@ class FileSplitter
     events_csv = EventsCSV.new(file_path)
     print_memory_usage("BEFORE each_slice")
 
-    events_csv.each_slice(BATCH_LIMIT).each_with_index.map do |batch, i|
+    events_csv
+      .each_slice(BATCH_LIMIT)
+      .each_with_index
+      .map do |batch, i|
       print_memory_usage("BEFORE batch #{i}")
 
       "#{file_path}_#{i}".tap do |split_file_path|
@@ -228,7 +235,10 @@ knew how I was going to use my `#each_slice` implementation in practice; I knew
 that, in my `FileSplitter` class, I was going to call:
 
 ```ruby
-events_csv.each_slice(BATCH_LIMIT).each_with_index.map do |batch, i|
+events_csv
+  .each_slice(BATCH_LIMIT)
+  .each_with_index
+  .map do |batch, i|
   ...
 end
 ```
