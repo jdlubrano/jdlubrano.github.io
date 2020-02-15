@@ -172,7 +172,9 @@ class FileSplitter
   def split_large_csv_file(file_path)
     events_csv = EventsCSV.new(file_path)
 
-    events_csv.each_slice(BATCH_LIMIT).each_with_index.map do |batch, file_index|
+    events_csv.each_slice(BATCH_LIMIT)
+              .each_with_index
+              .map do |batch, file_index|
       split_file_path = "#{file_path}_#{file_index}"
 
       File.open(split_file_path, 'w') do |csv|
@@ -195,7 +197,9 @@ class FileSplitter
   def split_large_csv_file(file_path)
     events_csv = EventsCSV.new(file_path)
 
-    events_csv.each_slice(BATCH_LIMIT).each_with_index.map do |batch, i|
+    events_csv.each_slice(BATCH_LIMIT)
+              .each_with_index
+              .map do |batch, i|
       "#{file_path}_#{i}".tap do |split_file_path|
         write_batch_to_file(split_file_path, events_csv.headers, batch)
       end
