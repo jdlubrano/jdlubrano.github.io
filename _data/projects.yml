@@ -2,6 +2,10 @@
   description: A Ruby gem for reading remote files one line at a time
   source_link: <a href="https://github.com/jdlubrano/stream_lines">GitHub</a>
 
+- name: PagerDuty CLI
+  description: A Go CLI for PagerDuty
+  source_link: <a href="https://github.com/jdlubrano/pagerduty-cli">GitHub</a>
+
 - name: Deliver Later Matchers
   description: RSpec matchers for ActionMailer delayed emails
   source_link: <a href="https://github.com/jdlubrano/deliver_later_matchers">GitHub</a>
