@@ -1,15 +1,37 @@
 - name: StreamLines
   description: A Ruby gem for reading remote files one line at a time
   source_link: <a href="https://github.com/jdlubrano/stream_lines">GitHub</a>
+  source_href: "https://github.com/jdlubrano/stream_lines"
+  icons:
+    - "fas fa-stream"
 
 - name: PagerDuty CLI
   description: A Go CLI for PagerDuty
   source_link: <a href="https://github.com/jdlubrano/pagerduty-cli">GitHub</a>
+  source_href: "https://github.com/jdlubrano/pagerduty-cli"
+  icons:
+    - "fas fa-pager"
+
+- name: Desktop QR Reader
+  description: An Electron app for opening URLs embedded in QR codes
+  source_href: "https://github.com/jdlubrano/desktop-qr"
+  icons:
+    - "fas fa-qrcode"
 
 - name: Deliver Later Matchers
-  description: RSpec matchers for ActionMailer delayed emails
-  source_link: <a href="https://github.com/jdlubrano/deliver_later_matchers">GitHub</a>
+  description: RSpec matchers for ActionMailer delayed emails (now merged into rspec-rails!)
+  source_href: "https://github.com/jdlubrano/deliver_later_matchers"
+  icons:
+    - "fas fa-envelope"
 
 - name: Datamaps Icons
   description: A plugin for the <a href="https://datamaps.github.io">Datamaps</a> library
-  source_link: <a href="https://github.com/jdlubrano/datamaps-icons-plugin">GitHub</a>
+  source_href: "https://github.com/jdlubrano/datamaps-icons-plugin"
+  icons:
+    - "fas fa-map-marker"
+
+- name: Datamaps Zoom-to
+  description: A plugin for the <a href="https://datamaps.github.io">Datamaps</a> library
+  source_href: "https://github.com/jdlubrano/datamaps-zoomto-plugin"
+  icons:
+    - "fas fa-search-plus"

@@ -4,6 +4,26 @@ title: Projects
 permalink: /projects
 ---
 
-<main class="billboard text-centered">
-  <h1 class="big-news">Projects Coming Soon!</h1>
-</main>
+<div class="billboard text-center">
+  <h1 class="headline">My Projects</h1>
+</div>
+<ul class="projects-list">
+  {% for project in site.data.projects %}
+  <li>
+    <h2>
+      <span class="project-icons">
+        {% for icon in project.icons %}
+        <i class="{{ icon }} fa-fw"></i>
+        {% endfor %}
+      </span>
+      {{ project.name }}
+    </h2>
+    <p class="project-description">
+      {{ project.description }}
+      <a href="{{ project.source_href }}">
+        <i class="fab fa-github"></i>
+      </a>
+    </p>
+  </li>
+  {% endfor %}
+</ul>

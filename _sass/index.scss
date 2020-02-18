@@ -1,14 +1,15 @@
 .billboard {
   @include span-columns(12);
   @include omega();
+
   .author-name,
   .big-news {
     font-size: 4em;
     margin-bottom: 0.25em;
   }
+
   .headline {
     font-size: 2em;
-    margin-bottom: 0.25em;
   }
 }
 
